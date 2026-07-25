@@ -4,7 +4,7 @@ import type { User, RoleName } from '../../types';
 import { DataTable } from '../../components/ui/DataTable';
 import type { Column } from '../../components/ui/DataTable';
 import { ConfirmDialog } from '../../components/ui/ConfirmDialog';
-import { Shield, ShieldAlert, UserCheck, UserX, RefreshCw } from 'lucide-react';
+import { UserCheck, UserX, RefreshCw } from 'lucide-react';
 import { toast } from 'sonner';
 
 export const ManageUsersPage: React.FC = () => {

@@ -73,7 +73,7 @@ export type Notification = {
   user_id: string;
   ticket_no: string;
   request_id: string;
-  title: string;
+  title?: string;
   message: string;
   is_read: boolean;
   created_at: string;

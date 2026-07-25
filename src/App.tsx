@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './lib/auth/AuthContext';
 import { RequireRole } from './lib/auth/RequireRole';

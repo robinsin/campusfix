@@ -439,7 +439,7 @@ export async function getStatusLogs(requestId: string): Promise<StatusLog[]> {
     .sort((a, b) => new Date(a.changed_at).getTime() - new Date(b.changed_at).getTime());
 }
 
-export async function getReportsSummary(dateRangeDays = 30): Promise<ReportsSummary> {
+export async function getReportsSummary(_dateRangeDays = 30): Promise<ReportsSummary> {
   let all: ServiceRequest[] = [];
   let currentCategories: Category[] = [];
   let recentActivityLogs: StatusLog[] = [];

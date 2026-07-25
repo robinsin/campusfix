@@ -1,6 +1,6 @@
 import React from 'react';
-import { Search, Filter, X } from 'lucide-react';
-import type { RequestStatus, Priority, Category } from '../../types';
+import { Search, X } from 'lucide-react';
+import type { Category } from '../../types';
 
 interface FilterBarProps {
   searchQuery: string;

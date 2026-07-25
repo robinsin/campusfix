@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthContext';
 import { getNotifications, markNotificationAsRead, markAllNotificationsRead } from '../lib/api';
 import type { Notification } from '../types';
-import { Bell, CheckCheck, Clock } from 'lucide-react';
+import { CheckCheck, Clock } from 'lucide-react';
 import { toast } from 'sonner';
 
 export const NotificationsPage: React.FC = () => {

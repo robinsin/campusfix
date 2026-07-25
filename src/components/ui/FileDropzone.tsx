@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { UploadCloud, X, Image as ImageIcon } from 'lucide-react';
+import { UploadCloud, X } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface FileDropzoneProps {

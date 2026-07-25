@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getAllRequests, getCategories, listUsers, exportRequestsCSV } from '../../lib/api';
 import type { ServiceRequest, Category, User } from '../../types';
 import { StatCard } from '../../components/ui/StatCard';
-import { Download, FileText, Filter, Calendar, ClipboardList, CheckCircle2, Clock, Flame } from 'lucide-react';
+import { Download, FileText, Filter, ClipboardList, CheckCircle2, Clock, Flame } from 'lucide-react';
 import { toast } from 'sonner';
 import jsPDF from 'jspdf';
 
@@ -10,7 +10,6 @@ export const ReportsPage: React.FC = () => {
   const [requests, setRequests] = useState<ServiceRequest[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [officers, setOfficers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(true);
 
   // Filters
   const [dateRange, setDateRange] = useState('30');
@@ -23,7 +22,6 @@ export const ReportsPage: React.FC = () => {
   }, []);
 
   const loadData = async () => {
-    setLoading(true);
     try {
       const [reqData, catData, userData] = await Promise.all([
         getAllRequests(),
@@ -33,8 +31,8 @@ export const ReportsPage: React.FC = () => {
       setRequests(reqData);
       setCategories(catData);
       setOfficers(userData.filter((u) => u.role_id === 'officer'));
-    } finally {
-      setLoading(false);
+    } catch (err) {
+      console.error('Failed to load report data', err);
     }
   };
 

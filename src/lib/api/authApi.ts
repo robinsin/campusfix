@@ -1,7 +1,7 @@
 import { supabase } from '../supabase/client';
 import { isSupabaseConfigured } from './supabaseApi';
 export { isSupabaseConfigured };
-import type { User, RoleName } from '../../types';
+import type { User } from '../../types';
 
 export async function loginWithSupabase(email: string, password: string): Promise<User> {
   const { data, error } = await supabase.auth.signInWithPassword({

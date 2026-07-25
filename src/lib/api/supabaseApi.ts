@@ -6,7 +6,6 @@ import type {
   StatusLog,
   Notification,
   CreateRequestInput,
-  ReportsSummary,
   RequestStatus,
   Priority,
   RoleName
