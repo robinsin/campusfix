@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.yarn/
+
+# Production & Build Outputs
+dist/
+dist-ssr/
+build/
+out/
+.vite/
+.cache/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+
+# Logs & Temporary Files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.tmp
+*.temp
+
+# Test & Coverage Outputs
+coverage/
+.nyc_output/
+
+# IDE & Editor Files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+
+# OS System Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Tooling Scratch Directories
+.gemini/
+.agents/

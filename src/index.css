@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ledger-navy: #16273E;
+  --color-worn-gold: #B8933F;
+  --color-site-orange: #C9542C;
+  --color-chalk: #F4F2ED;
+  --color-ink: #23262B;
+  --color-resolved-green: #3F7A57;
+}
+
+@layer base {
+  :root {
+    --ledger-navy: #16273E;
+    --worn-gold: #B8933F;
+    --site-orange: #C9542C;
+    --chalk: #F4F2ED;
+    --ink: #23262B;
+    --resolved-green: #3F7A57;
+  }
+
+  body {
+    background-color: var(--chalk);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Archivo', 'Barlow Condensed', sans-serif;
+    letter-spacing: -0.01em;
+    color: #16273E;
+  }
+
+  .font-mono-data {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  /* Force all inputs, selects, textareas, and option dropdowns to have crisp dark text on light backgrounds */
+  input, select, textarea, option {
+    color: #23262B !important;
+  }
+
+  option {
+    background-color: #ffffff !important;
+    color: #23262B !important;
+  }
+}
+
+/* Custom Perforated Ticket Stub Style for Status Badges */
+.ticket-stub {
+  position: relative;
+  border-style: dashed;
+  border-width: 1px;
+  border-radius: 2px;
+  padding: 0.2rem 0.6rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.ticket-stub::before, .ticket-stub::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 8px;
+  background-color: var(--chalk);
+  border-radius: 4px;
+}
+
+.ticket-stub::before {
+  left: -4px;
+}
+
+.ticket-stub::after {
+  right: -4px;
+}
+
+/* Semantic Status Badges — High Contrast Dark Text on Tinted Backgrounds */
+.status-new {
+  background-color: #E2E8F0;
+  border-color: #64748B;
+  color: #0F172A !important;
+}
+
+.status-in_progress {
+  background-color: #FEF3C7;
+  border-color: #B8933F;
+  color: #78350F !important;
+}
+
+.status-on_hold {
+  background-color: #FFEDD5;
+  border-color: #C9542C;
+  color: #7C2D12 !important;
+}
+
+.status-resolved {
+  background-color: #DCFCE7;
+  border-color: #3F7A57;
+  color: #14532D !important;
+}
+
+.status-cancelled {
+  background-color: #F1F5F9;
+  border-color: #94A3B8;
+  color: #334155 !important;
+  text-decoration: line-through;
+}
+
+/* Priority Badges — High Contrast Dark Text */
+.priority-urgent {
+  background-color: #FEE2E2;
+  border: 1px solid #EF4444;
+  color: #991B1B !important;
+}
+
+.priority-high {
+  background-color: #FFEDD5;
+  border: 1px solid #F97316;
+  color: #7C2D12 !important;
+}
+
+.priority-medium {
+  background-color: #FEF3C7;
+  border: 1px solid #F59E0B;
+  color: #78350F !important;
+}
+
+.priority-low {
+  background-color: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: #334155 !important;
+}
+
+/* Keyboard focus state */
+:focus-visible {
+  outline: 2px solid #B8933F !important;
+  outline-offset: 2px !important;
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
